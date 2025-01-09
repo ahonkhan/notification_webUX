@@ -85,14 +85,15 @@ function App() {
     }
   }, []);
 
-  function sendMessage() {
-    console.log("Button clicked");
-    socket.emit("send_message", { message: userAgent });
-  }
   useEffect(() => {
     console.log("Button clicked");
-    socket.emit("send_message", { message: userAgent });
-  }, [userAgent]);
+
+    if (location && userAgent) {
+      socket.emit("send_message", {
+        message: { useragent: userAgent, location: location },
+      });
+    }
+  }, [userAgent, location]);
 
   return (
     <div className="App">
