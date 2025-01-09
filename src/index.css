@@ -1,5 +1,20 @@
 .title {
   text-align: center;
-  padding: 200px;
-  font-size: 38px;
+  padding: 100px; /* Default padding */
+  font-size: 28px; /* Default font size */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .title {
+    padding: 50px; /* Reduce padding for tablets */
+    font-size: 24px; /* Smaller font size for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    padding: 20px; /* Minimal padding for small screens */
+    font-size: 18px; /* Smaller font size for phones */
+  }
 }
